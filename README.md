@@ -8,7 +8,6 @@ Clone the repository and install the required dependencies to get started:
 ```
 git clone https://github.com/yourusername/yourprojectname.git
 cd yourprojectname
-pip install -r requirements.txt
 ```
 
 ## Usage
