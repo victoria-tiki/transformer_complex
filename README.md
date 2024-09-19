@@ -6,8 +6,8 @@ We introduce a transformer model that predicts the time-series evolution of the 
 ## Installation
 Clone the repository and install the required dependencies to get started:
 ```
-git clone https://github.com/victoria-tiki/tranformer_complex.git
-cd tranformer_complex
+git clone https://github.com/victoria-tiki/transformer_complex.git
+cd transformer_complex
 ```
 
 ## Usage
