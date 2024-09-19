@@ -6,8 +6,8 @@ We introduce a transformer model that predicts the time-series evolution of the 
 ## Installation
 Clone the repository and install the required dependencies to get started:
 ```
-git clone https://github.com/yourusername/yourprojectname.git
-cd yourprojectname
+git clone https://github.com/victoria-tiki/tranformer_complex.git
+cd tranformer_complex
 ```
 
 ## Usage
@@ -15,11 +15,14 @@ To train the model using the provided slurm script, run:
 ```
 sbatch submitgpu.slurm
 ```
+Note, the provided models_weights.py file is only required if you need the model to return the attention weights (e.g. for visualization purposes in inference/plot_weights.py).  
 
 For inference, use the following slurm script:
 ```
 sbatch submit_inference.slurm
 ```
+This will run both the inference.py script and later aggregate results over multiple gpus in aggregate_results.py. The resulting hdf5 file can be examined using the provided compute_overlap.ipynb code. A checkpoint file, model.ckpt, is also provided. 
+
 Ensure that you adjust the slurm scripts according to your specific computational environment and requirements.
 
 
