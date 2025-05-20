@@ -25,4 +25,7 @@ This will run both the inference.py script and later aggregate results over mult
 
 Ensure that you adjust the slurm scripts according to your specific computational environment and requirements.
 
+## Visualizations
+
+To access an interactive visualization of Decoder self-attention and cross-attention plots, [click here!](https://victoria-tiki.github.io/transformer_complex/index.html)
 
