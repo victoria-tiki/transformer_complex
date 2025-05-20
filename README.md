@@ -27,5 +27,5 @@ Ensure that you adjust the slurm scripts according to your specific computationa
 
 ## Visualizations
 
-To access an interactive visualization of Decoder self-attention and cross-attention plots, [click here!](https://victoria-tiki.github.io/transformer_complex/index.html)
+To access an interactive visualization of decoder self-attention and decoder cross-attention plots, [click here!](https://victoria-tiki.github.io/transformer_complex/index.html)
 
