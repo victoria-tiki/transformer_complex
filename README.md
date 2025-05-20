@@ -1,4 +1,4 @@
-# AI-forecasting of higher order wave modes of quasi-circular, spinning, non-precessing binary black hole mergers
+# Sequence modeling of higher-order wave modes of binary black hole mergers
 
 ## Introduction
 We introduce a transformer model that predicts the time-series evolution of the pre-merger, merger and ringdown evolution of higher-order wave modes of quasi-circular, spinning, non-precessing binary black hole mergers. Our transformer model takes as input the time-series evolution of the inspiral waveform evolution, as given by the plus and cross polarizations. Our model is implemented in PyTorch Lightning.
@@ -25,4 +25,7 @@ This will run both the inference.py script and later aggregate results over mult
 
 Ensure that you adjust the slurm scripts according to your specific computational environment and requirements.
 
+## Visualizations
+
+To access an interactive visualization of decoder self-attention and decoder cross-attention plots, [click here!](https://victoria-tiki.github.io/transformer_complex/index.html)
 
