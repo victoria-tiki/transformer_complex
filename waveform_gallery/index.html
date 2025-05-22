@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Waveform Gallery (q vs θ / χ_eff)</title>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="waveform_data.js"></script> 
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      margin: 40px;
+    }
+    #waveform {
+      margin-top: 30px;
+    }
+    img {
+      max-width: 80%;
+      max-height: 600px;
+      border: 1px solid #ccc;
+    }
+  </style>
+</head>
+<body>
+  <h1>Interactive Waveform Gallery</h1>
+  <p style="font-size: 0.95em; color: #444; max-width: 800px; margin: 10px auto;">
+  Select a view mode using the dropdown to visualize the waveforms in either the (q, θ) or (q, χ_eff) parameter space.
+  Click on any point in the parameter space to preview the corresponding waveform below.
+</p>
+  <label for="viewMode"><strong>View mode:</strong></label>
+  <select id="viewMode">
+    <option value="theta">θ vs q</option>
+    <option value="chieff">χ_eff vs q</option>
+  </select>
+
+  <div id="plot" style="width: 100%; height: 600px;"></div>
+  <div id="waveform">
+    <h3 id="label"></h3>
+    <img id="preview" src="" alt="Waveform preview will appear here" />
+  </div>
+
+  <script>
+    function computeChiEff(q, s1, s2) {
+      return (q * s1 + s2) / (1 + q);
+    }
+
+    const plotDiv = document.getElementById('plot');
+    const previewImg = document.getElementById('preview');
+    const labelText = document.getElementById('label');
+    const viewModeSelector = document.getElementById('viewMode');
+
+    function makeTrace(mode) {
+      return {
+        x: waveformData.map(d => d.q),
+        y: waveformData.map(d =>
+          mode === "chieff" ? computeChiEff(d.q, d.s1, d.s2) : d.theta
+        ),
+        mode: 'markers',
+        type: 'scatter',
+        marker: {
+          size: 8,
+          color: 'steelblue'
+        },
+        hovertemplate: mode === "chieff"
+          ? "q=%{x}<br>χ_eff=%{y:.3f}<extra></extra>"
+          : "q=%{x}<br>θ=%{y:.3f}<extra></extra>",
+        customdata: waveformData.map(d => d)
+      };
+    }
+
+    function makeLayout(mode) {
+      return {
+        xaxis: { title: 'q' },
+        yaxis: {
+          title: mode === "chieff" ? 'χ_eff' : 'θ (rad)',
+          range: mode === "chieff" ? [-1.1, 1.1] : [0, 3.2]
+        },
+        hovermode: 'closest',
+        margin: { t: 40 }
+      };
+    }
+
+    function renderPlot(mode) {
+      Plotly.newPlot('plot', [makeTrace(mode)], makeLayout(mode)).then(() => {
+        plotDiv.on('plotly_click', function(data){
+          const d = data.points[0].customdata;
+          labelText.textContent = `q=${d.q}, θ=${d.theta}, s₁ᶻ=${d.s1}, s₂ᶻ=${d.s2}`;
+          previewImg.src = "waveform_gallery/" + d.file;
+        });
+      });
+    }
+
+    // Initial render
+    renderPlot("theta");
+
+    // Click → show preview
+    plotDiv.on('plotly_click', function(data){
+      const d = data.points[0].customdata;
+      labelText.textContent = `q=${d.q}, θ=${d.theta}, s₁ᶻ=${d.s1}, s₂ᶻ=${d.s2}`;
+      previewImg.src = "waveform_gallery2/" + d.file;
+    });
+
+    // View switcher
+    viewModeSelector.addEventListener("change", (e) => {
+      renderPlot(e.target.value);
+    });
+  </script>
+</body>
+</html>
