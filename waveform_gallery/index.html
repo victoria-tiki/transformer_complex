@@ -97,7 +97,7 @@
     plotDiv.on('plotly_click', function(data){
       const d = data.points[0].customdata;
       labelText.textContent = `q=${d.q}, θ=${d.theta}, s₁ᶻ=${d.s1}, s₂ᶻ=${d.s2}`;
-      previewImg.src = "waveform_gallery2/" + d.file;
+      previewImg.src = d.file;
     });
 
     // View switcher
