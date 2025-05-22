@@ -107,7 +107,7 @@
 
     function showPlots(prefix, waveformIndex, head) {
       const viewer = document.getElementById("viewer");
-      const base = `attention_head_visualizations/${prefix}_waveform${waveformIndex}_head${head}`;
+      const base = `${prefix}_waveform${waveformIndex}_head${head}`;
 
       viewer.innerHTML = `
         <div style="display: flex; justify-content: space-between; width: 94%; font-weight: bold; margin-bottom: 6px;">
