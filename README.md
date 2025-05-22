@@ -30,11 +30,12 @@ Ensure that you adjust the slurm scripts according to your specific computationa
 
 ## Visualizations
 
-To access an interactive visualization of decoder self-attention and decoder cross-attention plots, [click here!](https://victoria-tiki.github.io/transformer_complex/index.html)
+To access an interactive visualization of decoder self-attention and decoder cross-attention plots, [click here!](https://victoria-tiki.github.io/transformer_complex/index.html). For a discussion of limitations and interpretability considerations, see Section 3.6 of our paper.
 
 ## References
 
 [1] Khan et alii, *Interpretable AI forecasting for numerical relativity waveforms of quasi-circular, spinning, non-precessing binary black hole mergers*, 2022. [[2110.06968](https://arxiv.org/pdf/2110.06968)]
+
 [2] Tiki et alii, *Sequence modeling of higher-order wave modes of binary black hole mergers*, 2025. 
 
 
