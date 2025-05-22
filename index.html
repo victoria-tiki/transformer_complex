@@ -1,126 +1,35 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>Transformer Attention Heatmaps</title>
+  <meta charset="UTF-8">
+  <title>Interactive Visualizations</title>
   <style>
     body {
       font-family: sans-serif;
-    }
-    table {
-      border-collapse: collapse;
-      margin: 20px auto;
-    }
-    td, th {
-      border: 1px solid #ccc;
-      padding: 10px;
       text-align: center;
+      padding: 40px;
     }
-    button {
-      font-size: 18px;
-      margin: 0 4px;
-      cursor: pointer;
-    }
-    img {
-      width: 48%;
-      height: auto;
+    a {
+      display: inline-block;
+      margin: 20px;
+      padding: 15px 25px;
+      font-size: 1.2em;
+      background: #eee;
       border: 1px solid #ccc;
+      text-decoration: none;
+      color: #333;
+      border-radius: 6px;
     }
-    #viewer {
-      margin-top: 30px;
-      display: flex;
-      justify-content: center;
-      flex-direction: column;
-      align-items: center;
-      width: 100%;
-    }
-    h2 {
-      text-align: center;
+    a:hover {
+      background: #ddd;
     }
   </style>
 </head>
 <body>
-  <h2>Transformer Attention Heatmaps Viewer</h2>
+  <h1>Interactive Visualization Gallery</h1>
+  <p>Explore the model behavior through attention weights and waveform predictions.</p>
 
-  <div id="legend" style="text-align: center; margin-bottom: 20px;">
-    <strong>Legend:</strong>
-    <span style="margin: 0 10px;">❌ = Cross-Attention</span>
-    <span style="margin: 0 10px;">🔄 = Self-Attention</span>
-  </div>
-
-  <table>
-    <tr>
-      <th>Labels ↓ / Heads →</th>
-      <th>head0</th>
-      <th>head1</th>
-      <th>head2</th>
-      <th>head3</th>
-      <th>head4</th>
-    </tr>
-  </table>
-
-  <div id="viewer"></div>
-
-  <script>
-    const waveforms = [
-      { index: 0, label: "q=1.050, s₁ᶻ=-0.790, s₂ᶻ=-0.790, θ=0.054" },
-      { index: 76512, label: "q=1.650, s₁ᶻ=-0.510, s₂ᶻ=0.010, θ=2.654" },
-      { index: 153024, label: "q=2.250, s₁ᶻ=-0.190, s₂ᶻ=-0.750, θ=2.004" },
-      { index: 229536, label: "q=2.850, s₁ᶻ=0.090, s₂ᶻ=0.090, θ=1.354" },
-      { index: 306048, label: "q=3.450, s₁ᶻ=0.410, s₂ᶻ=-0.670, θ=0.704" },
-      { index: 459072, label: "q=4.850, s₁ᶻ=-0.590, s₂ᶻ=-0.630, θ=2.654" },
-      { index: 535584, label: "q=5.450, s₁ᶻ=-0.310, s₂ᶻ=0.210, θ=2.004" },
-      { index: 612096, label: "q=6.050, s₁ᶻ=0.010, s₂ᶻ=-0.550, θ=1.354" },
-      { index: 688608, label: "q=6.650, s₁ᶻ=0.290, s₂ᶻ=0.290, θ=0.704" }
-    ];
-
-    const attentionTypes = {
-      "❌": "crossattention",
-      "🔄": "maskedselfattention"
-    };
-
-    const table = document.querySelector("table");
-
-    for (let i = 0; i < waveforms.length; i++) {
-      const { index, label } = waveforms[i];
-      const row = document.createElement("tr");
-
-      const headerCell = document.createElement("th");
-      headerCell.textContent = label;
-      row.appendChild(headerCell);
-
-      for (let head = 0; head < 5; head++) {
-        const cell = document.createElement("td");
-
-        for (let [emoji, prefix] of Object.entries(attentionTypes)) {
-          const button = document.createElement("button");
-          button.textContent = emoji;
-          button.onclick = () => showPlots(prefix, index, head);
-          cell.appendChild(button);
-        }
-
-        row.appendChild(cell);
-      }
-
-      table.appendChild(row);
-    }
-
-    function showPlots(prefix, waveformIndex, head) {
-      const viewer = document.getElementById("viewer");
-      const base = `attention_head_visualizations/${prefix}_waveform${waveformIndex}_head${head}`;
-
-      viewer.innerHTML = `
-        <div style="display: flex; justify-content: space-between; width: 94%; font-weight: bold; margin-bottom: 6px;">
-          <div style="text-align: center; width: 48%;">Original (lmax=4)</div>
-          <div style="text-align: center; width: 48%;">lmax=2</div>
-        </div>
-        <div style="display: flex; justify-content: center; gap: 4%; width: 100%;">
-          <img src="${base}_orig.jpg" alt="Original attention plot">
-          <img src="${base}_lmax2.jpg" alt="LMAX2 attention plot">
-        </div>
-      `;
-    }
-  </script>
+  <a href="attention/index.html">Attention Weight Visualizations</a>
+  <a href="waveform/index.html">Waeform Gallery (q × θ / χ<sub>eff</sub>)</a>
 </body>
 </html>
-
