@@ -30,7 +30,7 @@ Ensure that you adjust the slurm scripts according to your specific computationa
 
 ## Visualizations
 
-To access an interactive visualization of decoder self-attention and decoder cross-attention plots, [click here!](https://victoria-tiki.github.io/transformer_complex/index.html). For a discussion of limitations and interpretability considerations, see Section 3.6 of our paper.
+To explore interactive visualizations, including decoder attention maps and waveform predictions, [click here!](https://victoria-tiki.github.io/transformer_complex/index.html). For a discussion of attention interpretability and its limitations, see Section 3.6 of our paper.
 
 ## References
 
