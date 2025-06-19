@@ -36,6 +36,6 @@ To explore interactive visualizations, including decoder attention maps and wave
 
 [1] Khan et alii, *Interpretable AI forecasting for numerical relativity waveforms of quasi-circular, spinning, non-precessing binary black hole mergers*, 2022. [[2110.06968](https://arxiv.org/pdf/2110.06968)]
 
-[2] Tiki et alii, *Sequence modeling of higher-order wave modes of binary black hole mergers*, 2025. 
+[2] Tiki et alii, *Sequence modeling of higher-order wave modes of binary black hole mergers*, 2025. [[2409.03833](https://arxiv.org/abs/2409.03833)]
 
 
