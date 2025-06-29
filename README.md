@@ -6,14 +6,12 @@ We introduce a transformer model that predicts the time-series evolution of the 
 
 This repository is based on the implementation described in [1], with extensive modifications including a migration from TensorFlow to PyTorch and significant architectural redesign. This repository accompanies the paper [2], where we introduce and analyze the presented model. See the paper for methodological details and discussion of results.
 
-## Installation
+## Installation and Usage
 Clone the repository and install the required dependencies to get started:
 ```
 git clone https://github.com/victoria-tiki/transformer_complex.git
 cd transformer_complex
 ```
-
-## Usage
 To train the model using the provided slurm script, run:
 ```
 sbatch submitgpu.slurm
@@ -28,9 +26,9 @@ This will run both the inference.py script and later aggregate results over mult
 
 Ensure that you adjust the slurm scripts according to your specific computational environment and requirements.
 
-## Visualizations
+## Context and Visualizations
 
-To explore interactive visualizations, including decoder attention maps and waveform predictions, [click here!](https://victoria-tiki.github.io/transformer_complex/index.html). For a discussion of attention interpretability and its limitations, see Section 3.6 of our paper.
+For an overview of the paper, results, and context, click [here](https://victoria-tiki.github.io/forecasting_transf/index.html?highlight=visualizations). This page also includes links to interactive visualizations, such as attention maps, extended waveform galleries comparing predicted and true waveforms, and obfuscation studies illustrating how the model uses different parts of the input. For a discussion of attention interpretability and its limitations, see Section 3.6 of our paper.
 
 ## References
 
