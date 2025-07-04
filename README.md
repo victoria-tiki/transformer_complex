@@ -28,7 +28,7 @@ Ensure that you adjust the slurm scripts according to your specific computationa
 
 ## Context and Visualizations
 
-For an overview of the paper, results, and context, click [here](https://victoria-tiki.github.io/forecasting_transf/index.html?highlight=visualizations). This page also includes links to interactive visualizations, such as attention maps, extended waveform galleries comparing predicted and true waveforms, and obfuscation studies illustrating how the model uses different parts of the input. For a discussion of attention interpretability and its limitations, see Section 3.6 of our paper.
+For an overview of the paper, results, and context, click [here](https://victoriatiki.com/projects/forecasting_transf?highlight=visualizations&job=true). This page also includes links to interactive visualizations, such as attention maps, extended waveform galleries comparing predicted and true waveforms, and obfuscation studies illustrating how the model uses different parts of the input. For a discussion of attention interpretability and its limitations, see Section 3.6 of our paper.
 
 ## References
 
