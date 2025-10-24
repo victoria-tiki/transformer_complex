@@ -1,5 +1,12 @@
 # Sequence modeling of higher-order wave modes of binary black hole mergers
 
+## Interactive Gallery
+
+Looking for the live, interactive visuals?
+- **Waveform Gallery (predicted vs. true)** → [waveform gallery](https://victoriatiki.com/projects/forecasting_transf/visualizations/waveform_gallery/)
+- **Attention Maps** → [attention maps](https://victoriatiki.com/projects/forecasting_transf/visualizations/attention_head_visualizations/)
+- **Obfuscation Studies** → [obfuscation plots](https://victoriatiki.com/projects/forecasting_transf/visualizations/obfuscation_plots/)
+  
 ## Introduction
 
 We introduce a transformer model that predicts the time-series evolution of the pre-merger, merger and ringdown evolution of higher-order wave modes of quasi-circular, spinning, non-precessing binary black hole mergers. Our transformer model takes as input the time-series evolution of the inspiral waveform evolution, as given by the plus and cross polarizations. 
