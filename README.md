@@ -39,8 +39,8 @@ For an overview of the paper, results, and context, click [here](https://victori
 
 ## References
 
-[1] Khan et alii, *Interpretable AI forecasting for numerical relativity waveforms of quasi-circular, spinning, non-precessing binary black hole mergers*, 2022. [[2110.06968](https://arxiv.org/pdf/2110.06968)]
+[1] Asad Khan, Eliu Huerta, and Huihuo Zheng. "Interpretable AI forecasting for numerical relativity waveforms of quasicircular, spinning, nonprecessing binary black hole mergers." Physical Review D 105.2 (2022): 024024. [[2110.06968](https://arxiv.org/pdf/2110.06968)]
 
-[2] Tiki et alii, *Sequence modeling of higher-order wave modes of binary black hole mergers*, 2025. [[2409.03833](https://arxiv.org/abs/2409.03833)]
+[2] Victoria Tiki, Kiet Pham, and Eliu Huerta. "Sequence modeling of higher-order wave modes of quasi-circular, spinning, non-precessing binary black hole mergers." Classical and Quantum Gravity 43.1 (2026): 015009. [[2409.03833](https://arxiv.org/abs/2409.03833)]
 
 
